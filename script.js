@@ -8,15 +8,12 @@ const span = document.getElementById('range-span');
 
 btn.addEventListener('click', function () {
   if (document.getElementById('text').value === 'red') {
-    btnNone.style.backgroundColor = style = "display: none;"
     return square.style.backgroundColor = 'red'
   }
   if (document.getElementById('text').value === 'yellow') {
-    btnNone.style.backgroundColor = style = "display: none;"
     return square.style.backgroundColor = 'yellow'
   }
   if (document.getElementById('text').value === 'green') {
-    btnNone.style.backgroundColor = style = "display: none;"
     return square.style.backgroundColor = 'green'
 
   } else {
@@ -24,26 +21,13 @@ btn.addEventListener('click', function () {
   }
 })
 
-btn.addEventListener('click', function () {
-  if (document.getElementById('text').value === 'red') {
-    return circle.style.backgroundColor = 'red'
-  }
-  if (document.getElementById('text').value === 'yellow') {
-    return circle.style.backgroundColor = 'yellow'
-  }
-  if (document.getElementById('text').value === 'green') {
-    return circle.style.backgroundColor = 'green'
+const circleParameterChange = function (event) {
+  span.textContent = event.target.value;
+  let circleParameter = event.target.value;
+  circle.style.height = circleParameter + '%';
+  circle.style.width = circleParameter + '%';
+};
 
-  } else {
-    console.log(false);
-  }
-})
-
-let percent = 0;
-range.addEventListener('input', function (event) {
- percent++
- if(percent <= 100) {
- }
-  circle.textContent = event.target.value
-})
+range.addEventListener('input', circleParameterChange);
+btnNone.style.display = "none";
 
